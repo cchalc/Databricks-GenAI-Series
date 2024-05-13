@@ -1,5 +1,5 @@
 # Databricks notebook source
-dbutils.widgets.text("catalog_name","main")
+dbutils.widgets.text("catalog_name","cjc")
 
 # COMMAND ----------
 
@@ -212,43 +212,6 @@ run_llm_chain(liquid_cluster, no_hallucinations_prompt, llama_model)
 # COMMAND ----------
 
 # MAGIC %md
-# MAGIC # Try It Yourself!
-# MAGIC Below, we set up a few LangChain prompts
-
-# COMMAND ----------
-
-#when crafting your prompt, remember that you need to add a variable injection (commonly with {}) to the template. See examples above.
-#once you have the prompt + variable, add the variable build your PromptTemplate in cell 25 below
-your_prompt_template_here = """
-                            """
-
-# COMMAND ----------
-
-your_question_here = """
-                     """
-
-# COMMAND ----------
-
-llama_model.predict(your_question_here)
-
-# COMMAND ----------
-
-#build your own PromptTemplate + LLM chain
-your_prompt_template = PromptTemplate(
-    #TODO
-  )
-
-your_model_chain = LLMChain(
-  #TODO
-)
-
-# COMMAND ----------
-
-model_chain.run() #TODO: what do we need to pass into run()?
-
-# COMMAND ----------
-
-# MAGIC %md
 # MAGIC # Saving our LangChain LLM Chain to MLflow
 # MAGIC This should look familiar!
 
@@ -262,6 +225,11 @@ input_columns = [
     {"type": "string", "name": input_key} for input_key in llama_chain.input_keys
 ]
 signature = infer_signature(input_columns, prediction)
+
+# COMMAND ----------
+
+print(type(signature))
+signature.to_dict()
 
 # COMMAND ----------
 

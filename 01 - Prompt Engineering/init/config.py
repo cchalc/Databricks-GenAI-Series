@@ -10,7 +10,7 @@ from transformers.utils import logging
 
 # COMMAND ----------
 
-dbutils.widgets.text("catalog_name","main")
+dbutils.widgets.text("catalog_name","cjc")
 
 # COMMAND ----------
 

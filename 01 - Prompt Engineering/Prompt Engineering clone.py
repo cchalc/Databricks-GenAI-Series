@@ -1,8 +1,4 @@
 # Databricks notebook source
-1+1
-
-# COMMAND ----------
-
 dbutils.widgets.text("catalog_name","cjc")
 
 # COMMAND ----------
@@ -153,17 +149,9 @@ few_shot_template = """For each tweet, describe its sentiment:
 
 # COMMAND ----------
 
-
-
-# COMMAND ----------
-
 tweet = "My day has been ugh"
 zero_shot_response = run_llm_chain(tweet, zero_shot_template, llama_model)
 print(zero_shot_response)
-
-# COMMAND ----------
-
-
 
 # COMMAND ----------
 
